@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { MyContext } from '../../context/MyProvider.js';
 import { useNavigate } from 'react-router-dom';
+import './Registration.css'
 
 const Registration = () => {
 
@@ -35,8 +36,8 @@ const Registration = () => {
     };
 
     return (
-        <div>
-            <h1>This is the sign up</h1>
+        <div className='registration-container'>
+            <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="email">Email: </label>
                 <input value={context.userCred.email} onChange={context.handleLoginChange} id="email" name="email" />
@@ -53,7 +54,7 @@ const Registration = () => {
                 <label htmlFor="age">Age: </label>
                 <input value={context.userCred.age} onChange={context.handleLoginChange} id="age" name="age"/>
 
-                <input type="submit" value="submit"/>
+                <input className="btn-form" type="submit" value="submit"/>
             </form >
         </div>
     )

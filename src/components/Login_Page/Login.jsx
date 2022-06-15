@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { MyContext } from "../../context/MyProvider.js";
 import { useNavigate } from 'react-router-dom';
+import './Login.css'
 
 const Login = () => {
     const context = useContext(MyContext);
@@ -42,8 +43,8 @@ const Login = () => {
     };
 
     return (
-        <div>
-            <h1>This is the login page </h1>
+        <div className="login-container">
+            <h1>Sign In</h1>
             <form onSubmit={handleLogin}>
                 <label htmlFor="email">Email</label>
                 <input value={context.userCred.email} onChange={context.handleLoginChange} id="email" name="email"/>
@@ -51,7 +52,7 @@ const Login = () => {
                 <label htmlFor="password">Password</label>
                 <input value={context.userCred.password} onChange={context.handleLoginChange} id="password" name="password" />
 
-                <input type="submit" value="login" />
+                <input type="submit" value="login" className="btn-form" />
             </form >
         </div>
     );
